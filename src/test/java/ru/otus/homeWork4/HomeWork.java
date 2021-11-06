@@ -65,25 +65,4 @@ public void setDriver(){
 
 
 }
-@Test
-    public void webTest2() {
-    ChromeDriver driver = new ChromeDriver();
-    //1. Открыть сайт ОТУС в новом окне
-    driver.get("https://otus.ru/");
-    logger.info("Сайт открыт!");
-    Auth newAuth = new Auth(driver);
-    FillData fillData = new FillData(driver);
-    //2. Авторизоваться на сайте ОТУС
-    newAuth.auth();
-    logger.info("Пользователь успешно авторизован!");
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-    //3. Проверить заполнение атрибутов заполненных ранее
-    fillData.examinationData();
-    logger.info("Данные успешно проверены!");
-
-}
-
-
-
-
 }
